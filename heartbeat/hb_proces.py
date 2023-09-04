@@ -40,3 +40,6 @@ with open(filename, mode="r") as f:
                     logger.error(f"  Timestamp = {previous_timestamp.strftime('%H:%M:%S')}, heartbeat = {time_difference} sec")
             # Обновляем предыдущую временную метку
             previous_timestamp = current_timestamp
+
+# __________check line______________
+
