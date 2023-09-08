@@ -62,3 +62,5 @@ https://qauto.forstudy.space/api-docs/
 5. Видалення користувача
 """
 
+def test_pass():
+    pass
