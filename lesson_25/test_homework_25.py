@@ -11,3 +11,22 @@ https://tracking.novaposhta.ua/#/uk/
 </div></div>
 == Посилка отримана
 """
+
+import time
+from lesson_25 import get_site, find_element, find_field, click, not_found, search_input, get_text, search_field, status_message
+
+def test_search_parsel():
+    url = "https://tracking.novaposhta.ua"
+    driver = get_site(url)
+    element = search_field(driver)
+    search_input(element, '20450771312334')
+    time.sleep(5)
+    element = status_message(driver)
+    text = get_text(element)
+    # print(text)
+    assert text == 'Посилка отримана', f"text is wrong -{text}"
+    driver.quit()
+
+#  _____check_line_____
+
+
