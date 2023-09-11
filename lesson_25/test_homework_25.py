@@ -27,6 +27,7 @@ def test_search_parsel():
     assert text == 'Посилка отримана', f"text is wrong -{text}"
     driver.quit()
 
-#  _____check_line_____
+#  _____check_line_2____
+
 
 
