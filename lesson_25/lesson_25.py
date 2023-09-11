@@ -44,7 +44,6 @@ def status_message(driver):
 def click(element):
     element.click()
 
-
 def search_input(element, text: str):
     element.clear()
     element.send_keys(text)
