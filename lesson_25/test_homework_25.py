@@ -11,3 +11,17 @@ https://tracking.novaposhta.ua/#/uk/
 </div></div>
 == Посилка отримана
 """
+from main_hw25 import get_site, find_field, search_input, click
+from main_hw25 import close_window, status_2, get_text
+
+def test_menu():
+    url = "https://tracking.novaposhta.ua/#/uk/"
+    driver = get_site(url)
+    element = find_field(driver)
+    search_input(element, "59000965885218")
+    button_2 = close_window(driver)
+    click(button_2)
+    element=status_2(driver)
+    text=get_text(element)
+    assert text=='Посилка отримана','Посилка не найдена'
+    driver.close()
