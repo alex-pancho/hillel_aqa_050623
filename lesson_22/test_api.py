@@ -63,7 +63,6 @@ https://qauto.forstudy.space/api-docs/
 4. отримання даних через GET в Cars або Expenses
 5. Видалення користувача
 """
-
 def  test_signup_user():
     user_1={
         "name": "Aksana",
@@ -77,8 +76,6 @@ def  test_signup_user():
     r_json = r.json()
     assert r.status_code == 201, f"Wrong status code:\n{r_json}"
     assert r_json.get('status', False) == "ok", "Key 'status' is not ok"
-
-
 
 def  test_signin_user():
         user_data = {
