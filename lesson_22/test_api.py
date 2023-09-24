@@ -61,4 +61,3 @@ https://qauto.forstudy.space/api-docs/
 4. отримання даних через GET в Cars або Expenses
 5. Видалення користувача
 """
-
