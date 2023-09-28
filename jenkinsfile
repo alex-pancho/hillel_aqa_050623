@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone source') {
+            steps {
+                git url: 'https://github.com/alex-pancho/hillel_aqa_050623.git', branch: 'TST_1-Irina'
+            }
+        }
+        stage('Build and activate venv') {
+            steps {
+                sh 'python3 -m venv venv'
+                sh '. /var/lib/jenkins/workspace/aqa_new_pipe/venv/bin/activate'
+                sh 'pip install -r /var/lib/jenkins/workspace/aqa_new_pipe/requirements.txt'
+            }
+        }
+        stage('Execute tests') {
+            steps {
+                sh 'python3 -m pytest /var/lib/jenkins/workspace/aqa_new_pipe/lesson_22/test_api.py --junitxml=/var/lib/jenkins/workspace/aqa_new_pipe/report.xml'
+                junit 'report.xml'
+            }
+        }
+    }
+}
