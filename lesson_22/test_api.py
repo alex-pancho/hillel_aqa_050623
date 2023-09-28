@@ -139,5 +139,5 @@ def test_user_delete_positive():
     """
     r = users.users(s)
     r_json = r.json()
-    assert r.status_code != 200, f"Wrong status code:\n{r_json}"
+    assert r.status_code == 200, f"Wrong status code:\n{r_json}"
     assert r_json.get('status', False) == "ok", "Key 'status' is not ok"
