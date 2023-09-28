@@ -2,10 +2,12 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import NoSuchElementException
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 
 def get_site(url: str) -> webdriver:
-    driver = webdriver.Firefox()
+    driver = webdriver.Chrome()
     # driver = webdriver.Chrome()
     driver.get(url)
     return driver
@@ -56,3 +58,17 @@ if __name__ == "__main__":
     # driver = get_hillel(user="guest2", passw="new_pass")
     element = main_menu_about(driver)
     click(element)
+
+
+class NovaPoshtaLocators:
+    TRACKING_INPUT = (By.ID, 'en')  # Locator for the tracking input field
+    TRACKING_BUTTON = (By.ID, 'np-number-input-desktop-btn-search-en')  # Locator for the track button
+    ERROR_MESSAGE = (By.ID, 'np-number-input-desktop-message-error-message')  # Locator for error message section
+    STATUS_TEXT = (By.XPATH, '//div[@class="header__status-text"]')  # Locator for the status text
+
+
+def wait_for_element(driver, locator):
+    """Wait for an element to be present."""
+    wait = WebDriverWait(driver, 10)
+    element = wait.until(EC.presence_of_element_located(locator))
+    return element
