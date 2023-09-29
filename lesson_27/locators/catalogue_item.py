@@ -1,5 +1,9 @@
 from selenium.webdriver.common.by import By
-from locators.base_locators import BaseLocators
+
+from hillel_aqa_050623.lesson_27.locators.base_locators import BaseLocators
+
+
+#from locators.base_locators import BaseLocators
 
 
 class CatalogueItemLocator(BaseLocators):
