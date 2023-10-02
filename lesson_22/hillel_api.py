@@ -179,3 +179,15 @@ class instructions():
         id_ = request_body.get("id", 1)
         endpoint = f"/instructions/{id_}"
         return s.get(base_api_url+endpoint)
+
+if __name__ == '__main__':
+    user = {
+    "name": "Dmytro",
+    "lastName": "Popov",
+    "email": "test0909@test.com",
+    "password": "Qwerty12345",
+    "repeatPassword": "Qwerty12345"
+    }
+    m = auth.signup(s, user)
+    print(m.json())
+
