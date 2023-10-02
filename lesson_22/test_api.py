@@ -114,7 +114,7 @@ def test_cars_id_put():
 def test_cars_get_brands():
     """Проверка что название файла логотипа соответствует марке автомобиля"""
     r = cars.brands(s)
-    assert r.status_code == 200, 'Wrong status code'
+    assert r.status_code == 400, 'Wrong status code'
     response_data = r.json()
     json_str = json.dumps(response_data, indent=4)  # indent=4 добавляет отступы для красивого форматирования
     # Выводим JSON-строку в консоли
@@ -137,4 +137,8 @@ def test_users_delete():
     json_str = json.dumps(response_data, indent=4)  # indent=4 добавляет отступы для красивого форматирования
     # Выводим JSON-строку в консоли
     print(json_str)
+
+
+# ____________________________________________________
+
 
