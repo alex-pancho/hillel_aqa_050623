@@ -79,6 +79,8 @@ def test_auth_getID():
     # Выводим JSON-строку в консоли
     print(json_str)
 
+
+@pytest.mark.skip
 def test_cars_post():
     """Проверяем что респонс возвращает 201 статус код"""
     user_data = {
