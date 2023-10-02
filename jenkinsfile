@@ -4,19 +4,19 @@ pipeline {
     stages {
         stage('Clone source') {
             steps {
-                git url: 'https://github.com/alex-pancho/hillel_aqa_050623.git', branch: 'TST_1-Irina'
+                git url: 'https://github.com/Leonidych73/hillel_aqa_050623_hw', branch: 'PopovHW_22'
             }
         }
         stage('Build and activate venv') {
             steps {
                 sh 'python3 -m venv venv'
-                sh '. /var/lib/jenkins/workspace/aqa_new_pipe/venv/bin/activate'
-                sh 'pip install -r /var/lib/jenkins/workspace/aqa_new_pipe/requirements.txt'
+                sh '. /var/lib/jenkins/workspace/Popov_pipeline_2/venv/bin/activate'
+                sh 'pip install -r /var/lib/jenkins/workspace/Popov_pipeline_2/requirements.txt'
             }
         }
         stage('Execute tests') {
             steps {
-                sh 'python3 -m pytest /var/lib/jenkins/workspace/aqa_new_pipe/lesson_22/test_api.py --junitxml=/var/lib/jenkins/workspace/aqa_new_pipe/report.xml'
+                sh 'python3 -m pytest /var/lib/jenkins/workspace/Popov_pipeline_2/lesson_22/test_api.py --junitxml=/var/lib/jenkins/workspace/Popov_pipeline_2/report.xml'
                 junit 'report.xml'
             }
         }
