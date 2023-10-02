@@ -31,14 +31,18 @@ def main_menu_about(driver):
 def find_field(driver):
     return find_element(driver, By.XPATH, '//input[@type="search"]')
 
+def search_field(driver):
+    return find_element(driver, By.XPATH, '//*[@id="en"]')
+
 
 def not_found(driver):
     return find_element(driver, By.XPATH, '//ul[@class="list-recent-events menu"]/p')
 
+def status_message(driver):
+    return find_element(driver, By.XPATH, '//*[@id="chat"]/header/div[2]/div[2]/div[2]')
 
 def click(element):
     element.click()
-
 
 def search_input(element, text: str):
     element.clear()
