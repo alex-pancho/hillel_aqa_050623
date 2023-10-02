@@ -1,0 +1,34 @@
+# ChatGPT: Git is a distributed version control system used for tracking changes
+# in Source code during the software development process.
+# It allows multiple developers to work on the same project simultaneously
+# and helps in collaboration and better code management.
+
+
+# https
+example: https://github.com/antohaUa/hillel_aqa_050623.git
+
+# ssh
+example: git@github.com:antohaUa/hillel_aqa_050623.git
+https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
+.git/config   # url should be updated if was cloned by https
+
+# cheatsheet
+https://education.github.com/git-cheat-sheet-education.pdf
+https://gist.github.com/Fractalbonita/6faaaa1e2b181efdce1423fab4d18662#getting-started-with-repositories
+
+# basic commands
+git clone <git link ssh or https>
+git status
+git pull origin main
+git checkout -b <your branch>
+git branch
+git branch -D <your_branch>
+git add <some_file>
+git reset <some_file>
+git commit -m "Your message"
+git push origin <your branch>
+git checkout main
+git pull origin main
+
+
+# Pycharm the same

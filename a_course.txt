@@ -1,0 +1,80 @@
+    Introduction to Python Automation
+        Basics Logical, Arithmetical, and String operations
+        Regular expressions
+        Tuple
+        List
+        Deque
+        Python Sets
+        Python Dictionaries
+        If else statement
+        For loop
+        While loop
+    Python Files
+        Python Files
+        File delete, move, and copy operation
+        OS module basics
+    Basics of Python Functions
+        Syntax of Function
+        Default
+        Arbitrary
+        Keyword arguments
+        Lambda functions
+    Python built-in functions
+    Generators and iterators basics
+    Python Modules and Package. PIP tool
+        Module basics
+        Import instructions
+        Python packages
+        3dparty packages
+    Python Exceptions, Time module
+    Object Oriented Programming
+        Class and object definitions
+        Object creation via class
+        Class and object attributes
+        Polymorphism
+        Encapsulation
+        Super method
+        Staticmethod and classmethod decorators
+    Automation: Pytest framework
+    Automation: Selenium, Elements, Locators, Xpath, Waits
+        Navigations with Selenium Web elements CSS locators
+        Click and sendKeys methods
+        Selenium Implicit and Explicit waits
+        Page Objects pattern
+    Design Patterns
+        Singleton
+        Factory method
+        Abstract factory
+        Decorator
+        Proxy
+    Automation: Parsers
+        Command Line arguments parsing with argparse
+        Data Serialization with JSON
+        Data Serialization with YAML
+        XML parser and DOM structure
+    Automation: Rest API testing
+        What is Rest API and how to test it
+        Practice writing tests
+        Mocking remote objects
+        How to test REST API with pytest
+        Practice writing tests with Postman tool
+    Automation: Test Report creation
+        How to create a test report with pytest-HTML
+        Allure reports
+        Saving report into SQLite DB
+    Parallel run
+        Threading module
+        Creation, start, stop, and join methods of thread
+        Threads problem
+        GIL and Sharable memory. Basic sync objects
+        Subprocess module
+        OS module for an additional process start
+        Multiprocessing module
+    CI, Jenkins
+        What is CI
+        Jenkins basics
+        Jenkins plugins
+        First Jenkins job
+        What are Jenkins triggers
+        Git basics for Jenkins’s integration
+

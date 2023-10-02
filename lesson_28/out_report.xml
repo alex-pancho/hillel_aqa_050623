@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites>
+<testsuite name="pytest" errors="0" failures="0" skipped="0" tests="2" time="0.042" timestamp="2023-09-21T20:31:44.326835" hostname="PF2XYE5C">
+<testcase classname="lesson_28.test_less_28" name="test_connection" time="0.001" />
+<testcase classname="lesson_28.test_less_28" name="test_connection_2" time="0.001" />
+</testsuite></testsuites>

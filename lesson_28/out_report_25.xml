@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="1" time="10.274" timestamp="2023-09-21T20:35:53.746335" hostname="PF2XYE5C"><testcase classname="lesson_25.test_less_25" name="test_search" time="9.946"><failure message="AssertionError: Search doesn't work&#10;assert 'No results found.' != 'No results found.'">def test_search():
+        url = "https://www.python.org"
+        driver = get_site(url)
+        element = find_field(driver)
+        assert element is not None, "element not found"
+        search_input(element, "python")
+        sleep(1)
+        element = not_found(driver)
+        text = get_text(element)
+&gt;       assert text != "No results found.", "Search doesn't work"
+E       AssertionError: Search doesn't work
+E       assert 'No results found.' != 'No results found.'
+
+lesson_25\test_less_25.py:24: AssertionError</failure></testcase></testsuite></testsuites>
