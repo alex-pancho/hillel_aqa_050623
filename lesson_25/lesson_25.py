@@ -5,14 +5,9 @@ from selenium.common.exceptions import NoSuchElementException
 
 
 def get_site(url: str) -> webdriver:
-    driver = webdriver.Firefox()
-    # driver = webdriver.Chrome()
+    driver = webdriver.Chrome()
     driver.get(url)
     return driver
-
-
-def get_hillel(user: str = "guest", passw: str = "welcome2qauto"):
-    return get_site(f"https://{user}:{passw}@qauto.forstudy.space/")
 
 
 def find_element(driver, by, locator: str):
@@ -24,20 +19,21 @@ def find_element(driver, by, locator: str):
     return element
 
 
-def main_menu_about(driver):
-    return find_element(driver, By.ID, "about")
+def get_search_input(driver):
+    return find_element(driver, By.ID, "en")
 
+def get_search_button(driver):
+    return find_element(driver, By.ID, "np-number-input-desktop-btn-search-en")
 
-def find_field(driver):
-    return find_element(driver, By.XPATH, '//input[@type="search"]')
-
-
-def not_found(driver):
-    return find_element(driver, By.XPATH, '//ul[@class="list-recent-events menu"]/p')
+def insert_text(element, str):
+    element.send_keys(str)
 
 
 def click(element):
     element.click()
+
+def get_accepting_element(driver):
+    return find_element(driver, By.CSS_SELECTOR, '.first-visit-helper-wrapper .button')
 
 
 def search_input(element, text: str):
@@ -46,13 +42,5 @@ def search_input(element, text: str):
     element.send_keys(Keys.RETURN)
 
 
-def get_text(element):
-    return element.text
-
-
-if __name__ == "__main__":
-    url = "http://www.python.org"
-    driver = get_site(url)
-    # driver = get_hillel(user="guest2", passw="new_pass")
-    element = main_menu_about(driver)
-    click(element)
+def get_status_text(driver):
+    return find_element(driver, By.XPATH, '//*[@id="chat"]/header/div[2]/div[2]/div[2]')
