@@ -2,13 +2,14 @@ from selenium.webdriver import Remote, ActionChains
 from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 
-from locators.base_page import BasePageLocators
-from locators.catalogue_item import CatalogueItemLocator
+from lesson_27.locators.base_page import BasePageLocators
+from lesson_27.locators.catalogue_item import CatalogueItemLocator
+
 
 class BasePage:
 
-    def __init__(self, web_driver: Remote):
-        self.__web_driver: Remote = web_driver
+    def __init__(self, web_driver):
+        self.__web_driver = web_driver
         self.__action = ActionChains(self.__web_driver)
         self.__wait = WebDriverWait(self.__web_driver, 15)
 
