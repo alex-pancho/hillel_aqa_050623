@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Clone source') {
+            steps {
+                git url: 'https://github.com/Anna-Irina/hillel_python_automation.git', branch: 'Postolova_Irina_hw_14'
+            }
+        }
+        stage('Build and activate venv') {
+            steps {
+                sh 'python3 -m venv venv'
+                sh '. /var/lib/jenkins/workspace/Postolova_Irina_hw_18/venv/bin/activate'
+                sh 'pip install -r /var/lib/jenkins/workspace/Postolova_Irina_hw_18/requirements.txt'
+            }
+        }
+        stage('Execute tests') {
+            steps {
+                sh 'python3 -m pytest /var/lib/jenkins/workspace/Postolova_Irina_hw_18/lesson_22/test_api.py --junitxml=/var/lib/jenkins/workspace/Postolova_Irina_hw_18/report.xml'
+                junit 'report.xml'
+            }
+        }
+    }
+}
